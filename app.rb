@@ -2,7 +2,7 @@ require 'sinatra'
 require 'json'
 require 'httparty'
 
-get '/yo' do
+get '/' do
   username = params[:username]
   if !username.nil?
     text = "From #{username.upcase}"
