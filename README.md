@@ -5,8 +5,8 @@ Yobot is an incredibly powerful tool that does one thing: YOs a Slack channel of
 ## Getting started
 
 1. Set up the Slack incoming webhook Yobot will use.
-2. Deploy Yobot to a server of your choice (it's pretty much ready to go if you want to deploy to Heroku.) Make sure to define the `CHANNEL` and `WEBHOOK` environment variables in the `.env` file, where `CHANNEL` is the Slack channel where you want YOs to appear, and `WEBHOOK` is the Slack incoming webhook url. See `.env.example`.
-3. [Request access to the Yo API](http://yoapi.justyo.co/). When filling out the form, enter your Yobot's URL in the callback URL field.
+2. Deploy Yobot to a server of your choice (it's pretty much ready to go if you want to deploy to Heroku.) Make sure to set the `WEBHOOK_URL` environment variables in the `.env` file, to the Slack incoming webhook url you'll use to post to slack. See `.env.example`.
+3. [Request access to the Yo API](http://yoapi.justyo.co/). When filling out the form, enter your Yobot's URL in the callback URL field and the channel you want to post to, like `http://your.yobot.url/channel/your-channel-name`. You can have different Yo accounts posting to different Slack channels by changing the url.
 4. Add the username you selected in the API form to your YO app.
 5. YO said account.
 6. Rejoice when you see your YOs in your Slack channel.

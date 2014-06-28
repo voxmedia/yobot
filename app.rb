@@ -2,20 +2,19 @@ require 'sinatra'
 require 'json'
 require 'httparty'
 
-get '/' do
+get '/channel/:channel' do
   username = params[:username]
   if !username.nil?
     text = "From #{username.upcase}"
-    payload = { :channel => ENV['CHANNEL'],
+    payload = { :channel => "##{params[:channel]}",
                 :text => text,
-                :username => 'YO',
-                :link_names => 1 }
-    uri = ENV['WEBHOOK']
-    response = HTTParty.post(uri, :body => { 'payload' => payload.to_json })
+                :username => 'YO'
+              }
+    response = HTTParty.post(ENV['WEBHOOK_URL'], :body => { 'payload' => payload.to_json })
     status 200
-    body 'Okay.'
+    body 'Yo.'
   else
     status 400
-    body 'Not okay.'
+    body 'No.'
   end
 end
